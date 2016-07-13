@@ -1,0 +1,38 @@
+﻿.loop(@index) when (@index > 0) {
+    #A@{index} {
+        opacity: 0;
+        -webkit-animation: showMe .3s linear forwards (2.7s+(@index*0.015s));
+        animation: showMe .3s linear forwards (2.7s+(@index*0.015s));
+    }
+
+     // next iteration
+     .loop(@index - 1);
+}
+
+// end the loop when index is 0
+.loop(0) {}
+
+// @times: 2s, 1s, 2s, 2s, 2s, 3s, 2s, 2s, 2s, 2s, 2s, 2s, 2s, 2s, 2s;
+@times: 1.7s, .7s, 1.7s, 1.7s, 1.7s, 2.7s, 1.7s, 1.7s, 1.7s, 1.7s, 1.7s, 1.7s, 1.7s, 1.7s, 1.7s;
+.loop2(@pipe) when (@pipe > 0) {
+
+    #P@{pipe}, #P@{pipe}_extra {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        -webkit-animation: dash extract(@times, @pipe) forwards linear (@pipe*0.15s);
+        animation: dash extract(@times, @pipe) forwards linear (@pipe*0.15s);
+    }
+
+     // next iteration
+     .loop2(@pipe - 1);
+}
+
+// end the loop when index is 0
+.loop2(0) {}
+
+.timedsvg {
+    @n: 70; //num of elements
+    .loop(@n);
+    @p: 15; //num of elements
+    .loop2(@p);
+}

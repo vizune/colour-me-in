@@ -1,0 +1,238 @@
+﻿
+html, body {margin:0; padding:0; overflow:hidden; width:100%; height:100%;}
+
+body {
+  background-color: #fff;
+}
+
+#svgWrapper {
+    position:relative;
+    width:100%;
+    height:100%;
+    bottom:0;
+    left:0;
+}
+
+#svgPipes { 
+    position:absolute;
+    bottom:0;
+
+    left:50%;
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    -ms-transform:translateX(-50%);
+    -o-transform:translateX(-50%);
+    transform:translateX(-50%);
+
+}
+
+#Colour path:hover, #Colour path:focus {
+    -webkit-transition: fill .3s ease-in;
+    -moz-transition: fill .3s ease-in;
+    -ms-transition: fill .3s ease-in;
+    -o-transition: fill .3s ease-in;
+    transition: fill .3s ease-in;
+}
+
+#Colour path {
+    fill: #ffffff;
+
+    pointer-events:all;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@-webkit-keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes showMe {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes showMe {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shakes {
+	0%   { 
+		transform: translate(2px, 1px)   rotate(0deg); 
+	}
+	10%  { 
+		transform: translate(-1px, -2px) rotate(-1deg); 
+	}
+	20%  { 
+		transform: translate(-3px, 0px)  rotate(1deg); 
+	}
+	30%  { 
+		transform: translate(0px, 2px)   rotate(0deg); 
+	}
+	40%  { 
+		transform: translate(1px, -1px)  rotate(1deg); 
+	}
+	50%  { 
+		transform: translate(-1px, 1px)  rotate(-1deg); 
+	}
+	60%  { 
+		transform: translate(-3px, -2px)  rotate(0deg); 
+	}
+	70%  { 
+		transform: translate(2px, 1px)   rotate(-1deg); 
+	}
+	80%  { 
+		transform: translate(-1px, -2px) rotate(1deg); 
+	}
+	90%  { 
+		transform: translate(2px, -1px)   rotate(0deg); 
+	}
+	100% { 
+		transform: translate(1px, -2px)  rotate(-1deg); 
+	}
+}
+
+@-moz-keyframes shakes {
+	0%   { 
+		-moz-transform: translate(2px, 1px)   rotate(0deg); 
+	}
+	10%  { 
+		-moz-transform: translate(-1px, -2px) rotate(-1deg); 
+	}
+	20%  { 
+		-moz-transform: translate(-3px, 0px)  rotate(1deg); 
+	}
+	30%  { 
+		-moz-transform: translate(0px, 2px)   rotate(0deg); 
+	}
+	40%  { 
+		-moz-transform: translate(1px, -1px)  rotate(1deg); 
+	}
+	50%  { 
+		-moz-transform: translate(-1px, 1px)  rotate(-1deg); 
+	}
+	60%  { 
+		-moz-transform: translate(-3px, -2px)  rotate(0deg); 
+	}
+	70%  { 
+		-moz-transform: translate(2px, 1px)   rotate(-1deg); 
+	}
+	80%  { 
+		-moz-transform: translate(-1px, -2px) rotate(1deg); 
+	}
+	90%  { 
+		-moz-transform: translate(2px, -1px)   rotate(0deg); 
+	}
+	100% { 
+		-moz-transform: translate(1px, -2px)  rotate(-1deg); 
+	}
+}
+
+@-webkit-keyframes shakes {
+	0%   { 
+		-webkit-transform: translate(2px, 1px)   rotate(0deg); 
+	}
+	10%  { 
+		-webkit-transform: translate(-1px, -2px) rotate(-1deg); 
+	}
+	20%  { 
+		-webkit-transform: translate(-3px, 0px)  rotate(1deg); 
+	}
+	30%  { 
+		-webkit-transform: translate(0px, 2px)   rotate(0deg); 
+	}
+	40%  { 
+		-webkit-transform: translate(1px, -1px)  rotate(1deg); 
+	}
+	50%  { 
+		-webkit-transform: translate(-1px, 1px)  rotate(-1deg); 
+	}
+	60%  { 
+		-webkit-transform: translate(-3px, -2px)  rotate(0deg); 
+	}
+	70%  { 
+		-webkit-transform: translate(2px, 1px)   rotate(-1deg); 
+	}
+	80%  { 
+		-webkit-transform: translate(-1px, -2px) rotate(1deg); 
+	}
+	90%  { 
+		-webkit-transform: translate(2px, -1px)   rotate(0deg); 
+	}
+	100% { 
+		-webkit-transform: translate(1px, -2px)  rotate(-1deg); 
+	}
+}
+
+.timedsvg #Colour {
+    opacity: 0;
+    -webkit-animation: showMe .3s linear forwards 3.9s;
+    animation: showMe .3s linear forwards 3.9s;
+}
+
+.secret_container {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    overflow:hidden;
+}
+
+.shhhh {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    bottom: -200px;
+    -webkit-transition: bottom 0.3s ease-in-out;
+    -moz-transition: bottom 0.3s ease-in-out;
+    -o-transition: bottom 0.3s ease-in-out;
+    transition: bottom 0.3s ease-in-out;
+}
+
+.shhhh.out {
+    bottom: -10px;
+}
+
+.shhhh.shake {
+    -webkit-animation: shakes 0.8s linear;
+    -moz-animation: shakes 0.8s linear;
+    animation: shakes 0.8s linear;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.shhhh svg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
